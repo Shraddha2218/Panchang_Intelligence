@@ -1,0 +1,42 @@
+.contact-page{
+    font-size: 15px;
+    margin-top: 1.5%;
+}
+
+
+.bg_image{
+    background: url(../images/imgLogo/bg.jpg);
+    background-size: cover;
+    padding-bottom: 12%;
+}
+
+.connect{
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+    font-size: 320%;
+    color: white;
+    padding: 2%;
+}
+
+
+.form-box{
+    background-color: white;
+    padding:3%;
+    border-radius: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.submit-btn{
+    font-weight: 600;
+    height: 30px;
+    font-size: 14px;
+    border-radius: 0.5rem;
+    margin-top: 2%;
+    width: 100px;
+    border: none;
+    background: linear-gradient(263.93deg, #027FFE 4.47%, #47BFDF 94.54%);
+}
+
+ .form-control{
+     font-size: 13px;
+ }

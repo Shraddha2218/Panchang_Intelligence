@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container-fluid contact-page">
+    <div class="row ">
+        <div class="col-md-12 bg_image">
+
+            <div class="text-center"><h1 class="connect"><b>Connect with Us</b></h1></div>
+            <div class="container form-box">
+
+                <form method="post">
+                    {% csrf_token %}
+                        <div class="form-group">
+                        <label for="inputName">Name</label>
+                        <input type="text" class="form-control" id="inputName" name="inputName" placeholder="Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputEmail">Email</label>
+                            <input type="email" class="form-control" id="inputEmail" name="inputEmail" placeholder="Email Address">
+                          </div>
+                        <div class="form-group">
+                            <label>Choose a category</label>
+                            <input list="type" class="form-control" name="inputType" />
+                            <datalist id="type">
+                              <option value="Feedback">
+                              <option value="API subscription enquiry">
+                            </datalist>
+                          </div>
+                        <label for="feedback">Text</label>
+                          <textarea class="form-control" rows="3" placeholder="Your message" name="inputMessage"></textarea>
+                        <div class="text-center">
+                        <button type="submit" class="btn btn-primary submit-btn">Submit</button>
+                      </div>
+                  </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

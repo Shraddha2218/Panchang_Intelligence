@@ -1,0 +1,184 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container-fluid" id="bg_gif"
+    style="background:url(https://thumbs.gfycat.com/CreativeThoroughHarvestmouse-max-1mb.gif); background-size:cover">
+    <div class="container text-center">
+        <div class="row">
+
+            <div class="home-text-1 col-md-6 ">
+                <h1>The most intelligent weather prediction system</h1><br><br>
+                <p>Panchang is the traditional Indian almanac, which follows traditional units of Indian timekeeping,
+                    and present important dates and their calculations in tabulated form. Panchang has been in practice
+                    for 5000 years. Invaluable meteorogical rainfall predictions are enshrined in it. They are
+                    generalized over a region,based on an astrological phenomena like planet-star conjuctions, transits,
+                    planetary regin,etc.</p>
+                <button class="btn col-md-offset-4 col-md-4 connect-with-us-btn"
+                    onclick="window.location.href = 'contact'">Connect with Us</button>
+            </div>
+            <div class="home-api-box col-md-offset-1 col-md-5" id="random">
+                <p id="date">{{today}}</p><br>
+                <!-- <p id="temp"></p><br> -->
+                <p id="prediction">{{request.session.weather_status}}</p><br>
+                <!-- <p>Wind | <span id="wind"></span></p><br> -->
+                <!-- <p>Humidity | <span id="humidity"></span></p><br> -->
+                <img src="{% static 'images/Sun cloud angled rain.png' %}" width="200px">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="demo" class="carousel slide text-center" data-ride="carousel">
+
+    <!-- Indicators -->
+    <ul class="carousel-indicators">
+        <li data-target="#demo" data-slide-to="0" class="active"></li>
+        <li data-target="#demo" data-slide-to="1"></li>
+        <!-- <li data-target="#demo" data-slide-to="2"></li> -->
+    </ul>
+
+    <!-- The slideshow -->
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <h1>The most intelligent weather prediction system</h1><br><br>
+            <p>Panchang is the traditional Hindu Calender and almanac, which follows traditional units of Hindu
+                timekeeping, and present important dates and their calculations in stabulated form. Panchang has been in
+                practice for 5000 years. Invaluable meteorogical rainfall predictions are enshrined in it. They are
+                generalized over a region,based on an astrological phenomena like planet-star conjuctions, transits,
+                planetary regin,etc.</p>
+            <button class="btn col-md-offset-4 col-md-4 connect-with-us-btn"
+                onclick="window.location.href = 'contact'">Connect with Us</button>
+        </div>
+        <div class="carousel-item">
+            <div class="container home-api-box2 col-md-offset-1 col-md-4 text-center">
+                <p id="home-mobile-date">{{today}}</p><br>
+                <p id="home-mobile-prediction">{{request.session.weather_status}}</p>
+                <img src="{% static 'images/Sun cloud angled rain.png' %}" width="60px">
+            </div>
+        </div>
+    </div>
+
+    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+    </a>
+    <a class="carousel-control-next" href="#demo" data-slide="next">
+        <span class="carousel-control-next-icon"></span>
+    </a>
+
+</div>
+
+
+
+<div class="container-fluid text-center">
+    <div class="row">
+        <div class="container city-date-details col-md-5 col-md-offset-0 col-xs-offset-1 col-xs-10">
+            <form method="post">
+                <div class="row">
+                    <div class="col-md-1"><img src="{% static 'images/pin.png' %}" alt="" width="45px" height="auto">
+                    </div>
+                    <div class="col-md-10">
+                        <p id="home-location-date">{{request.session.address}}</p>
+                        <p id="city-state">City, State</p>
+                    </div>
+                </div>
+                <input type="text" placeholder="Enter Location or Pincode" id="home-input-lat-long"
+                    class="home-location-input">
+                <p class="home-view-forecast"> View the forecast</p>
+                <div class="row from-to-date">
+                    <div>
+                        <label for="#home-start-date">From: </label>
+                    </div>
+                    <div>
+                        <input type="date" name="home-start-date" id="home-start-date"
+                            value="{{request.session.startdate}}">
+                    </div>
+                </div>
+                <div class="row from-to-date">
+                    <div>
+                        <label for="#home-end-date">To: </label>
+                    </div>
+                    <div>
+                        <input type="date" name="home-end-date" id="home-end-date" value="{{request.session.enddate}}">
+                    </div>
+                </div>
+                <button type="submit" class="btn home-submit-btn">Submit</button>
+            </form>
+        </div>
+
+        <div class="container-fluid col-md-6 col-md-offset-0 col-xs-offset-5 col-xs-10" id="mapid">
+        </div>
+    </div>
+</div>
+<div class="container-fluid home-prediction-box">
+    <div class="row">
+        <div class="container col-md-6 home-panchang-prediction text-center">
+            <h1 class="result-headings"><b>Panchang Prediction</b></h1>
+            <div id="panchang-prediciton-results">
+                {% for each_w in request.session.panchang_weather_data %}
+                {% for key, value in each_w.items %}
+                <div class="row">
+                    <div class="col-md-4">
+                        <p class="todays_date">{{key| date:"d/m/Y"}}</p>
+                    </div>
+                    <div class=" col-md-4">
+                        <p><img src="" alt="" width="40px"></p>
+                    </div>
+                    <div class="col-md-4">
+                        <p class="todays_date">{{value}}</p>
+                    </div>
+                </div>
+                {% endfor %}
+                {% endfor %}
+
+
+            </div>
+        </div>
+
+        <div class="container col-md-6 home-weather-api text-center">
+            <h1 class="result-headings"><b>Weather API based prediction for this week</b></h1>
+            <div id="weather-api-results">
+                {% for each_wd in request.session.w_data %}
+                {% for key, value in each_wd.items %}
+                <div class="row">
+                    <div class="col-xs-4">
+                        <p class="todays_date">{{key| date:"d/m/Y"}}</p>
+                    </div>
+                    <div class=" col-xs-4">
+                        <p><img src="" alt="" width="40px"></p>
+                    </div>
+                    <div class="col-xs-4">
+                        <p class="todays_date">{{value}}</p>
+                    </div>
+                </div>
+                {% endfor %}
+                {% endfor %}
+            </div>
+        </div>
+
+    </div>
+</div>
+<script>
+    var options = { center: [{{ lat }}, {{ lon }}], zoom: 9 }
+    //document.getElementById('lat').value = startlat;
+    //document.getElementById('lon').value = startlon;
+    map = L.map('mapid', options);
+    var nzoom = 9;
+    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', { attribution: 'OSM' }).addTo(map);
+    myMarker = L.marker([{{ lat }}, {{ lon }}], { title: "Coordinates", alt: "Coordinates", draggable: true }).addTo(map).on('dragend', function () {
+        var lat = myMarker.getLatLng().lat.toFixed(8);
+        var lon = myMarker.getLatLng().lng.toFixed(8);
+
+        var czoom = map.getZoom();
+        if (czoom < 18) { nzoom = czoom + 2; }
+        if (nzoom > 18) { nzoom = 18; }
+        if (czoom != 18) { map.setView([lat, lon], nzoom); } else { map.setView([lat, lon]); }
+        // document.getElementById('lat').value = lat;
+        // document.getElementById('lon').value = lon;
+        myMarker.bindPopup("Lat " + lat + "<br />Lon " + lon).openPopup();
+
+    });
+</script>
+
+
+{% endblock %}

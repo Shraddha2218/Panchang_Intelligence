@@ -1,0 +1,21 @@
+.policy-para{
+    font-size: 20px;
+}
+
+.policy-text{
+    color: white;
+}
+
+.policy-btn{
+    border-radius: 10px;
+    font-size: 18px;
+    background: linear-gradient(263.93deg, #027FFE 4.47%, #47BFDF 94.54%);
+    color: white;
+    width: 10%;
+}
+
+@media screen and (max-width:991px){
+    .policy-btn{
+        width: 30%;
+    }
+}

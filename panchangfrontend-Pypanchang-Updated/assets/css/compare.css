@@ -1,0 +1,29 @@
+.compare-page{
+    font-size: 15px;
+    margin-top: 1.5%;
+}
+
+.division{
+    height: 1.5px;
+    width: 33%;
+    background-color: grey;
+    background-position: center;
+}
+
+.compare-p{
+    font-size: 20px;
+}
+
+.number{
+    font-size: 450%;
+    color: #007DFF;
+}
+
+.website-links{
+    padding-top: 2%;
+}
+
+.box-1{
+    border-bottom:1.5px solid grey;
+    margin-bottom: 1%;
+}

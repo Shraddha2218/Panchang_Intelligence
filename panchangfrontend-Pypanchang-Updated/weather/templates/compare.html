@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container-fluid compare-page">
+    <div class="row">
+        <div class="col-md-12 bg_image">
+
+            <div class="text-center"><h1 class="connect"><b>Compare</b></h1></div>
+            <div class="container form-box">
+                <div class="text-center"><p class="compare-p">The comparison on this website uses </p></div>
+                <div class="division col-xs-offset-4"></div>
+                <div class="col-md-12 col-xs-12 box-1">
+                    <div class="col-md-1 col-xs-3 number"><p>1.</p></div>
+                    <div class="col-md-5 col-xs-9 website-links">
+                        <p><b>Weather API</b></p>
+                        <a href="https://openweathermap.org/guide">https://openweathermap.org/guide</a>
+                    </div>
+                </div>
+                <div class="col-md-12 col-xs-12">
+                    <div class="col-md-1 col-xs-3 number"><p>2.</p></div>
+                    <div class="col-md-6 col-xs-9 website-links">
+                        <p><b>SoDa Merra Data</b></p>
+                        <a href="http://www.soda-pro.com/web-services/meteo-data/merra/info">http://www.soda-pro.com/web-services/meteo-data/merra/info</a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 
