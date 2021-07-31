@@ -93,7 +93,7 @@ You can find a running system to test at [this link](https://3.7.103.170/pestman
 All authors:   
 - [Shreyas Gawande](https://github.com/shreyasmakerslab) (Team Leader)
 - [Shraddha Kale](https://github.com/Shraddha2218)
-- Snehal Yeole  
+- Ajita Rath  
 
 
 ## License
