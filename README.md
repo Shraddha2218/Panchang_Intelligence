@@ -66,7 +66,7 @@ Very critical observations so needs expertise.
 ●40 years worth of daily rainfall data was used to verify our results
 ## Demo Video
 
-[Demo Video available here.](./Demo_Video.mp4)
+[Demo Video available here.](./Panchang_Intelligence.MP4)
 
 
 
