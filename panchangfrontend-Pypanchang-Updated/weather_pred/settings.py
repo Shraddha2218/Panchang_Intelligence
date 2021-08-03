@@ -140,4 +140,4 @@ STATICFILES_DIRS = [
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = "/media/"
-PANCHANG_API_URL = "/panchang/api"
+PANCHANG_API_URL = "https://3.7.103.170/panchangapi/api"

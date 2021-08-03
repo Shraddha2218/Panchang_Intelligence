@@ -5,8 +5,8 @@ router = routers.DefaultRouter()
 #router.register(r'geeks', GeeksViewSet)
 
 urlpatterns = [
-    path('', views.home, name='home'),
-    path('home/', views.newhome, name='newhome'),
+    path('', views.newhome, name='home'),
+    # path('home/', views.newhome, name='newhome'),
     path('search/', views.search_lat_lng, name='search'),
     # path('result/', views.result, name='result'),
     path('about/', views.about, name='about'),
